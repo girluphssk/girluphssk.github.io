@@ -3,45 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact — Girl UP HSSK</title>
+    <title>Girl UP HSSK</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        .hero-home{
+            min-height:90vh;
+            display:flex;
+            align-items:center;
+            position:relative;
+            overflow:hidden;
+        }
+
+        .hero-home::before{
+            content:"";
+            position:absolute;
+            inset:0;
+
+            background:
+            linear-gradient(
+                rgba(20,20,20,0.55),
+                rgba(20,20,20,0.55)
+            ),
+            url("https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80");
+
+            background-size:cover;
+            background-position:center;
+            z-index:1;
+        }
+
+        .hero-content{
+            position:relative;
+            z-index:2;
+            max-width:700px;
+            color:white;
+        }
+
+        .hero-tag{
+            display:inline-block;
+            padding:10px 16px;
+            border-radius:999px;
+            background:rgba(255,255,255,0.15);
+            backdrop-filter:blur(10px);
+            margin-bottom:24px;
+            font-weight:600;
+        }
+
+        .hero-content h1{
+            font-size:4.5rem;
+            line-height:1.05;
+            margin-bottom:24px;
+            font-weight:800;
+        }
+
+        .hero-content p{
+            font-size:1.2rem;
+            line-height:1.7;
+            opacity:0.95;
+            margin-bottom:36px;
+        }
+
+        .hero-buttons{
+            display:flex;
+            gap:16px;
+            flex-wrap:wrap;
+        }
+
+        .primary-btn{
+            padding:14px 28px;
+            border-radius:999px;
+            background:linear-gradient(
+                135deg,
+                #d9468f,
+                #7c3aed
+            );
+            color:white;
+            font-weight:700;
+            box-shadow:0 10px 30px rgba(0,0,0,0.2);
+            transition:.25s;
+        }
+
+        .primary-btn:hover{
+            transform:translateY(-2px);
+        }
+
+        .secondary-btn{
+            padding:14px 28px;
+            border-radius:999px;
+            border:2px solid rgba(255,255,255,0.5);
+            color:white;
+            font-weight:700;
+            backdrop-filter:blur(10px);
+            transition:.25s;
+        }
+
+        .secondary-btn:hover{
+            background:rgba(255,255,255,0.12);
+        }
+
+        .preview-section{
+            padding:90px 0;
+        }
+
+        .preview-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:24px;
+        }
+
+        .preview-card{
+            background:white;
+            padding:30px;
+            border-radius:20px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .preview-card h3{
+            margin-bottom:12px;
+            color:#d9468f;
+        }
+
+        @media(max-width:768px){
+
+            .hero-content h1{
+                font-size:2.8rem;
+            }
+
+            .hero-content p{
+                font-size:1rem;
+            }
+
+        }
+    </style>
 </head>
+
 <body>
 
 <nav class="navbar">
-    <div class="logo">Girl UP HSSK</div>
+
+    <div class="logo">
+        Girl UP HSSK
+    </div>
 
     <div class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="gallery.html">Gallery</a>
         <a href="activities.html">Activities</a>
         <a href="about.html">About</a>
-        <a href="contact.html" class="active">Contact</a>
+        <a href="contact.html">Contact</a>
         <a href="blog.html">Blog</a>
     </div>
 
     <a class="cta" href="contact.html">Join Us</a>
-    <button class="mobile-toggle" id="mobileToggle">☰</button>
+
+    <button class="mobile-toggle" id="mobileToggle">
+        ☰
+    </button>
+
 </nav>
 
-<section class="section container">
-    <h1 class="section-title">Contact & Applications</h1>
+<section class="hero-home">
 
-    <div class="card">
-        <form class="contact-form">
+    <div class="container">
 
-            <input type="text" placeholder="Full Name">
+        <div class="hero-content">
 
-            <input type="email" placeholder="Email">
+            <div class="hero-tag">
+                Girl UP HSSK
+            </div>
 
-            <input type="text" placeholder="Grade">
+            <h1>
+                "There is no limit to what we, as women, can accomplish."
+            </h1>
 
-            <textarea placeholder="Why do you want to join?"></textarea>
+            <p>
+                A community of students dedicated to leadership,
+                advocacy, empowerment, and creating meaningful
+                change both within and beyond our school.
+            </p>
 
-            <button class="cta">Submit Application</button>
+            <div class="hero-buttons">
 
-        </form>
+                <a href="about.html" class="primary-btn">
+                    Learn More
+                </a>
+
+                <a href="blog.html" class="secondary-btn">
+                    Top Blogs
+                </a>
+
+            </div>
+
+        </div>
+
     </div>
+
+</section>
+
+<section class="preview-section">
+
+    <div class="container">
+
+        <div class="preview-grid">
+
+            <div class="preview-card">
+                <h3>Our Mission</h3>
+                <p>
+                    Mission statement coming soon.
+                </p>
+            </div>
+
+            <div class="preview-card">
+                <h3>Our Vision</h3>
+                <p>
+                    Vision statement coming soon.
+                </p>
+            </div>
+
+            <div class="preview-card">
+                <h3>Latest Activities</h3>
+                <p>
+                    Upcoming projects and initiatives will be showcased here.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
 <footer>
@@ -49,5 +238,6 @@
 </footer>
 
 <script src="script.js"></script>
+
 </body>
 </html>
